@@ -5,33 +5,69 @@ body{
   display: flex;
   flex-direction: column;
 }
+/*le contenu du header*/
 header{
   display: flex;
 	margin: 40px auto 0 auto;
 	width: 100%;
 	justify-content: space-between;
-	border: 1px solid brown;
 }
-header div {
-	border: 1px solid red;
+/*taille des textes du header*/
+header h1 {
+	font-size: 25px;
+}
+/*pour mettre de l'espace au dessus du header*/
+header > div {
 	margin: 0px 10px;
 }
+/*le "new game" qui apparait a cote du plus*/
 header .newGame{
   display: flex;
   position: relative;
 }
-header .newGame h1{
-  position: absolute;
-  top: 0px;
+/*reglage de la taille du signe plus et de la position*/
+header .newGame #sign{
+	font-size: 30px;
+	/*on met un padding au dessu du signe plus pour
+	rééquilibrer un espace sur l'image qui se verrait
+	quand elle tourne*/
+	padding-top: 2px;
+	outline: none;
+}
+/*le cadre dans lequel le "new game" se deplace*/
+header .newGame #text{
+	position: absolute;
+  top: 5px;
   right: 100%;
   width: 200px;
-  border: 1px solid brown;
-  transition: all 1s;
+	/*le cadre est invisible pour que la souris ne l'active pas
+	en passant dessus, mais seulement en passant sur le plus*/
+	visibility: hidden;
   overflow: hidden;
 }
-header .newGame:hover h1{
-  padding-left: 100%;
+/*le "new game"*/
+header .newGame #text h1{
+	margin-left: 110%;
+  width: 250px;
+	opacity: 0;
+  transition: all 1s;
 }
+/*en passant sur le plus, le cadre du "new game" devient visible*/
+header .newGame:hover #text{
+	visibility: visible;
+}
+/*et le texte apparait lentement*/
+header .newGame:hover #text h1{
+	opacity: 1;
+	margin-left: 0px;
+}
+/*le plus tourne quand on clique dessus*/
+header .newGame #sign:focus {
+	transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+
 #jeu{
   display: flex;
   border: 1px solid blue;
