@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link rel="stylesheet" href="styles.css">
   <title>Dice world game super warrior killer evil</title>
 </head>
 
@@ -24,7 +25,7 @@
 
 <div id="jeu">
 
-	<div id="player1">
+	<div id="player1" class="column">
 		<h2>PLAYER 1 <i class="far fa-hand-point-left"></i></h2>
 			<p id="score1"></p>
 		<div id="current1">
@@ -33,21 +34,22 @@
 		</div>
 	</div>
 
-	<div id="diceShot">
+	<div id="diceRoll" class="column">
 		<img id="dice1" src="./images/dice-1.png" alt="dice">
     <img id="dice2" src="./images/dice-1.png" alt="dice">
       <p><i class="fas fa-sync-alt"></i> ROLL DICE</p>
       <p><i class="fas fa-arrow-circle-down"></i> HOLD</p>
 	</div>
 
-	<div id="player2">
+	<div id="player2" class="column">
 		<h2>PLAYER 2 <i class="far fa-hand-point-left"></i></h2>
 			<p id="score2"></p>
 		<div id="current2">
 			<p>current</p>
 			<p id="currentScore2"></p>
-	</div>
-
+	  </div>
+  </div>
+  
 </div>
 
 </body>

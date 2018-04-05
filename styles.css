@@ -1,0 +1,44 @@
+*{
+  margin: auto;
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+header{
+  display: flex;
+}
+#jeu{
+  display: flex;
+  border: 1px solid blue;
+  margin: 0px;
+  height: 80vh;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  border: 1px solid black;
+}
+#diceRoll img{
+  width: 100px;
+  border: 1px solid yellow;
+  margin: 10px auto;
+}
+#diceRoll{
+  padding-top: 10%;
+}
+#diceRoll img:nth-child(2){
+  margin-bottom: 100%;
+  border: 1px solid red;
+}
+#diceRoll p{
+  margin: 10px auto;
+  border: 1px solid red;
+}
+#player1{
+  width: 30%;
+}
+#player2{
+  width: 30%;
+}
