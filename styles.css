@@ -2,23 +2,61 @@
   margin: auto;
 }
 body{
+	position: relative;
+	background-color: #A88350;
+	padding-top: 80%;
+}
+
+/*///////////////////////////*/
+/*les polices*/
+h1, h2, p {
+	font-size: 1.5vw;
+}
+p#score1, p#score2 {
+	font-size: 5vw;
+	color: #EE4B48;
+}
+p#currentScore1, p#currentScore2 {
+	color: #FFF;
+}
+
+
+
+/*cadre du contour*/
+#frame  {
+	position: absolute;
+	top: 1%;
+	left: 15%;
+	width: 70%;
+	height: 50%;
   display: flex;
   flex-direction: column;
+	background-color: #FFFFFF;
+	margin: 50px auto;
 }
+/*la moitiee coloree*/
+#frame #backColor {
+	position: absolute;
+	content: "";
+	height: 100%;
+	width: 50%;
+	top: 0px;
+	left: 0px;
+	background-color: #F7F7F7;
+	display: none;
+}
+
+/*///////////////////////////*/
 /*le contenu du header*/
 header{
   display: flex;
-	margin: 40px auto 0 auto;
-	width: 100%;
+	margin: 7% 5% 0 5%;
+	width: 90%;
 	justify-content: space-between;
-}
-/*taille des textes du header*/
-header h1 {
-	font-size: 25px;
 }
 /*pour mettre de l'espace au dessus du header*/
 header > div {
-	margin: 0px 10px;
+	margin: 0px;
 }
 /*le "new game" qui apparait a cote du plus*/
 header .newGame{
@@ -27,19 +65,15 @@ header .newGame{
 }
 /*reglage de la taille du signe plus et de la position*/
 header .newGame #sign{
-	font-size: 30px;
-	/*on met un padding au dessu du signe plus pour
-	rééquilibrer un espace sur l'image qui se verrait
-	quand elle tourne*/
-	padding-top: 2px;
+	font-size: 2vw;
 	outline: none;
 }
 /*le cadre dans lequel le "new game" se deplace*/
 header .newGame #text{
 	position: absolute;
-  top: 5px;
+  top: 9%;
   right: 100%;
-  width: 200px;
+  width: 700%;
 	/*le cadre est invisible pour que la souris ne l'active pas
 	en passant dessus, mais seulement en passant sur le plus*/
 	visibility: hidden;
@@ -67,47 +101,75 @@ header .newGame #sign:focus {
   transition: all 0.5s;
 }
 
-
+/*///////////////////////////////////////*/
+/*la div jeu entoure les deux joueurs et le lancer de des*/
 #jeu{
   display: flex;
-  border: 1px solid blue;
   margin: 0px;
-  height: 80vh;
+  height: 80%;
 }
+/*la mise en page des elements en column*/
 .column{
   display: flex;
   flex-direction: column;
   margin: 0px auto;
-  border: 1px solid black;
 }
-#diceRoll img{
-  width: 100px;
-  border: 1px solid yellow;
-  margin: 10px auto;
-}
+
+/*/////////////////*/
+/*la collumn du milieu avec les lancers de des*/
 #diceRoll{
-  padding-top: 100px;
+  padding-top: 15%;
 }
+/*images de des*/
+#diceRoll img{
+  width: 30%;
+  margin: 3% auto;
+	box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.5);
+}
+/*espace sous les deux des*/
 #diceRoll img:nth-child(2){
-  margin-bottom: 50px;
-  border: 1px solid red;
+  margin-bottom: 10%;
 }
 #diceRoll p{
-  margin: 10px auto;
-  border: 1px solid red;
+  margin: 2% auto;
 }
+
+/*////////////////////////*/
+/*les deux columnes de joueurs*/
 #player1{
   width: 30%;
 }
 #player2{
   width: 30%;
 }
-.column div {
-	border: 1px solid purple;
-	padding: 15px 30px;
+/*le titre et la main du player en cours*/
+.column span {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+.column span div {
+	position: absolute;
+	left: 110%;
+	top: 15%;
+	background-color: transparent;
+}
+/*les icones du lancer de des*/
+#diceRoll span:hover div {
+	transform: rotate(360deg);
+	transition: all 1s;
+}
+/*le cadre rouge qui additionne le lancer de des*/
+.column > div {
+	padding: 5% 10% 20% 10%;
 	text-align: center;
+	background-color: #EE4B48;
 }
 .column > p {
-	border: 1px solid blue;
 	margin-top: 0px;
+}
+/*pour mettre le texte dans les cadres rouges en majuscule*/
+.column div p:first-child {
+	text-transform: uppercase;
+	font-size: 1vw;
 }
