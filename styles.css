@@ -5,6 +5,7 @@ body{
 	position: relative;
 	background-color: #A88350;
 	padding-top: 80%;
+	cursor: default;
 }
 
 /*///////////////////////////*/
@@ -33,6 +34,7 @@ p#currentScore1, p#currentScore2 {
   flex-direction: column;
 	background-color: #FFFFFF;
 	margin: 50px auto;
+	z-index: 0;
 }
 /*la moitiee coloree*/
 #frame #backColor {
@@ -41,9 +43,9 @@ p#currentScore1, p#currentScore2 {
 	height: 100%;
 	width: 50%;
 	top: 0px;
-	left: 0px;
+	left: 0%;
 	background-color: #F7F7F7;
-	display: none;
+	z-index: 0;
 }
 
 /*///////////////////////////*/
@@ -53,6 +55,7 @@ header{
 	margin: 7% 5% 0 5%;
 	width: 90%;
 	justify-content: space-between;
+	z-index: 1;
 }
 /*pour mettre de l'espace au dessus du header*/
 header > div {
@@ -67,6 +70,7 @@ header .newGame{
 header .newGame #sign{
 	font-size: 2vw;
 	outline: none;
+	cursor: pointer;
 }
 /*le cadre dans lequel le "new game" se deplace*/
 header .newGame #text{
@@ -107,6 +111,7 @@ header .newGame #sign:focus {
   display: flex;
   margin: 0px;
   height: 80%;
+	z-index: 1;
 }
 /*la mise en page des elements en column*/
 .column{
@@ -120,6 +125,10 @@ header .newGame #sign:focus {
 #diceRoll{
   padding-top: 15%;
 }
+#diceRoll #game {
+	background-color: transparent;
+}
+/*le cursor sur les elements cliquables*/
 /*images de des*/
 #diceRoll img{
   width: 30%;
@@ -132,6 +141,17 @@ header .newGame #sign:focus {
 }
 #diceRoll p{
   margin: 2% auto;
+}
+#diceRoll #game span {
+	cursor: pointer;
+}
+/*les icones du lancer de des tournent*/
+#diceRoll #game span:active div {
+	transform: rotate(180deg);
+	transition: all 0.2s;
+}
+#diceRoll #winn {
+	display: none;
 }
 
 /*////////////////////////*/
@@ -147,6 +167,7 @@ header .newGame #sign:focus {
 	display: flex;
 	flex-direction: row;
 	position: relative;
+	outline:none;
 }
 .column span div {
 	position: absolute;
@@ -154,10 +175,9 @@ header .newGame #sign:focus {
 	top: 15%;
 	background-color: transparent;
 }
-/*les icones du lancer de des*/
-#diceRoll span:hover div {
-	transform: rotate(360deg);
-	transition: all 1s;
+/*au debut on cache la main du player 2*/
+.column span #hand2 {
+	visibility: hidden;
 }
 /*le cadre rouge qui additionne le lancer de des*/
 .column > div {
