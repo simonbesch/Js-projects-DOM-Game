@@ -5,56 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<script type="text/javascript" src="script.js"></script>
   <link rel="stylesheet" href="styles.css">
   <title>Dice world game super warrior killer evil</title>
 </head>
 
 <body>
-<header>
-
-  <div class="nom">
-    <h1>Dice world game super warrior killer evil</h1>
-  </div>
-
-  <div class="newGame">
-    <div id="text"><h1>NEW GAME</h1></div>
-		<div id="sign" tabindex="0"><i class="far fa-plus-square"></i></div>
-  </div>
-
-</header>
-
-<div id="jeu">
-
-	<div id="player1" class="column">
-		<h2>PLAYER 1 <i class="far fa-hand-point-left"></i></h2>
-			<p id="score1">0</p>
-		<div id="current1">
-			<p>current</p>
-			<br>
-			<p id="currentScore1">0</p>
-		</div>
-	</div>
-
-	<div id="diceRoll" class="column">
-		<img id="dice1" src="./images/dice-1.png" alt="dice">
-    <img id="dice2" src="./images/dice-1.png" alt="dice">
-      <p><i class="fas fa-sync-alt"></i> ROLL DICE</p>
-      <p><i class="fas fa-arrow-circle-down"></i> HOLD</p>
-	</div>
-
-	<div id="player2" class="column">
-		<h2>PLAYER 2 <i class="far fa-hand-point-left"></i></h2>
-			<p id="score2">0</p>
-		<div id="current2">
-			<p>current</p>
-			<br>
-			<p id="currentScore2">0</p>
+<div id="frame">
+	<div id="backColor"></div>
+	<header>
+	
+	  <div class="nom">
+	    <h1>Dice world game super warrior killer evil</h1>
 	  </div>
-  </div>
-
+	
+	  <div class="newGame" onclick="newGame()">
+	    <div id="text"><h1>NEW GAME</h1></div>
+			<div id="sign" tabindex="0"><i class="far fa-plus-square"></i></div>
+	  </div>
+	
+	</header>
+	
+	<div id="jeu">
+	
+		<div id="player1" class="column">
+			<span><h2>PLAYER 1</h2>
+				<div id="hand1"><i class="far fa-hand-point-left"></i></div>
+			</span>
+			<p id="score1">0</p>
+			<div id="current1">
+				<p>current</p>
+				<br>
+				<p id="currentScore1">0</p>
+			</div>
+		</div>
+	
+		<div id="diceRoll" class="column">
+			<img id="dice1" src="./images/dice-1.png" alt="dice">
+	    <img id="dice2" src="./images/dice-1.png" alt="dice">
+				<div id="game">
+		      <span id="rollDice" onclick="rolldice()">
+						<div><i class="fas fa-sync-alt"></i></div>
+						<p>ROLL DICE</p>
+					</span>
+	 	     <span id="hold" onclick="hold()"><div><i class="fas fa-arrow-circle-down"></i></div>
+						<p>HOLD</p>
+					</span>
+				</div>
+				<div id="winn"><h2>YOU WIN !</h2></div>
+		</div>
+	
+		<div id="player2" class="column">
+			<span><h2>PLAYER 2</h2>
+				<div id="hand2"><i class="far fa-hand-point-left"></i></div>
+			</span>
+			<p id="score2">0</p>
+			<div id="current2">
+				<p>current</p>
+				<br>
+				<p id="currentScore2">0</p>
+		  </div>
+	  </div>
+	
+	</div>
 </div>
-
+<script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
